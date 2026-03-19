@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Campus Route Optimizer</title>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
   --bg:#0e1117; --sidebar:#131924; --surface:#192030; --surface2:#1f2a3c;
@@ -19,7 +19,7 @@
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html,body{height:100%;overflow:hidden;}
-body{background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',sans-serif;display:flex;flex-direction:column;height:100vh;}
+body{background:var(--bg);color:var(--text);font-family:'Inter', sans-serif;display:flex;flex-direction:column;height:100vh;}
 
 /* ── APP SHELL ────────────────────────────────────────────────────────── */
 .app{display:flex;flex:1;overflow:hidden;min-height:0;}
@@ -40,7 +40,7 @@ body{background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',sans
 
 .nav-section{padding:12px 7px 2px;flex-shrink:0;}
 .nav-label{font-size:0.54rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);padding:0 8px;margin-bottom:2px;}
-.nav-item{display:flex;align-items:center;gap:8px;padding:7px 9px;border-radius:7px;cursor:pointer;font-size:0.72rem;font-weight:500;color:var(--text2);transition:all 0.13s;border:none;background:none;width:100%;text-align:left;font-family:'Plus Jakarta Sans',sans-serif;position:relative;white-space:nowrap;}
+.nav-item{display:flex;align-items:center;gap:8px;padding:7px 9px;border-radius:7px;cursor:pointer;font-size:0.72rem;font-weight:500;color:var(--text2);transition:all 0.13s;border:none;background:none;width:100%;text-align:left;font-family:'Outfit',sans-serif;position:relative;white-space:nowrap;}
 .nav-item:hover{background:var(--surface);color:var(--text);}
 .nav-item.active{background:var(--accent-dim);color:var(--accent);font-weight:600;}
 .nav-item.active::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:3px;height:13px;background:var(--accent);border-radius:0 2px 2px 0;}
@@ -79,10 +79,10 @@ body{background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',sans
 .topbar-controls{display:flex;align-items:center;gap:7px;flex-wrap:wrap;}
 .lbl{font-size:0.64rem;font-weight:600;color:var(--text2);white-space:nowrap;}
 
-select{background:var(--surface2);border:1px solid var(--border);color:var(--text);font-family:'Plus Jakarta Sans',sans-serif;font-size:0.69rem;font-weight:500;padding:5px 8px;border-radius:7px;cursor:pointer;outline:none;max-width:130px;}
+select{background:var(--surface2);border:1px solid var(--border);color:var(--text);font-family:'Outfit',sans-serif;font-size:0.69rem;font-weight:500;padding:5px 8px;border-radius:7px;cursor:pointer;outline:none;max-width:130px;}
 select:focus{border-color:var(--accent);}
 
-.btn{font-family:'Plus Jakarta Sans',sans-serif;font-size:0.69rem;font-weight:600;padding:5px 12px;border-radius:7px;cursor:pointer;border:1px solid var(--border);background:var(--surface2);color:var(--text2);transition:all 0.13s;white-space:nowrap;}
+.btn{font-family:'Outfit',sans-serif;font-size:0.69rem;font-weight:600;padding:5px 12px;border-radius:7px;cursor:pointer;border:1px solid var(--border);background:var(--surface2);color:var(--text2);transition:all 0.13s;white-space:nowrap;}
 .btn:hover{color:var(--text);background:var(--surface);}
 .btn-primary{background:var(--accent)!important;border-color:var(--accent)!important;color:#fff!important;}
 .btn-primary:hover{background:#3d66e0!important;border-color:#3d66e0!important;}
@@ -98,7 +98,7 @@ input[type=range]{width:58px;accent-color:var(--accent);}
 /* ── CANVAS ───────────────────────────────────────────────────────────── */
 #canvas-wrap{flex:1;position:relative;overflow:hidden;background:var(--bg);min-width:0;}
 #canvas{display:block;}
-#tooltip{position:absolute;pointer-events:none;display:none;background:var(--surface);border:1px solid var(--border);border-radius:7px;padding:5px 11px;font-size:0.65rem;font-weight:500;color:var(--text);white-space:nowrap;font-family:'DM Mono',monospace;box-shadow:0 6px 20px rgba(0,0,0,0.5);z-index:10;}
+#tooltip{position:absolute;pointer-events:none;display:none;background:var(--surface);border:1px solid var(--border);border-radius:7px;padding:5px 11px;font-size:0.65rem;font-weight:500;color:var(--text);white-space:nowrap;font-family:'JetBrains Mono',monospace;box-shadow:0 6px 20px rgba(0,0,0,0.5);z-index:10;}
 
 /* ── RIGHT PANEL (desktop) ────────────────────────────────────────────── */
 .right-panel{
@@ -127,11 +127,11 @@ input[type=range]{width:58px;accent-color:var(--accent);}
 .drawer-handle-row{padding:10px 16px 6px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;flex-shrink:0;}
 .drawer-handle{width:36px;height:4px;background:var(--border);border-radius:2px;margin:0 auto;}
 .drawer-tabs{display:flex;gap:0;padding:0 14px;border-bottom:1px solid var(--border2);flex-shrink:0;}
-.drawer-tab{flex:1;padding:8px 4px;font-size:0.67rem;font-weight:600;color:var(--muted);background:none;border:none;cursor:pointer;border-bottom:2px solid transparent;font-family:'Plus Jakarta Sans',sans-serif;transition:all 0.13s;}
+.drawer-tab{flex:1;padding:8px 4px;font-size:0.67rem;font-weight:600;color:var(--muted);background:none;border:none;cursor:pointer;border-bottom:2px solid transparent;font-family:'Outfit',sans-serif;transition:all 0.13s;}
 .drawer-tab.active{color:var(--accent);border-bottom-color:var(--accent);}
 .drawer-content{overflow-y:auto;flex:1;padding:12px 14px;}
 .drawer-peek{display:flex;align-items:center;gap:8px;font-size:0.72rem;color:var(--text2);font-weight:500;}
-.drawer-peek .peek-stat{color:var(--green);font-family:'DM Mono',monospace;font-weight:700;}
+.drawer-peek .peek-stat{color:var(--green);font-family:'JetBrains Mono',monospace;font-weight:700;}
 
 /* ── MOBILE ALGO TABS (at top on mobile) ──────────────────────────────── */
 .mobile-algo-bar{
@@ -139,7 +139,7 @@ input[type=range]{width:58px;accent-color:var(--accent);}
   background:var(--sidebar);border-bottom:1px solid var(--border2);
   padding:0 14px;gap:0;flex-shrink:0;
 }
-.mobile-algo-tab{flex:1;padding:9px 4px;font-size:0.72rem;font-weight:600;color:var(--muted);background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;transition:all 0.13s;text-align:center;}
+.mobile-algo-tab{flex:1;padding:9px 4px;font-size:0.72rem;font-weight:600;color:var(--muted);background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;font-family:'Outfit',sans-serif;transition:all 0.13s;text-align:center;}
 .mobile-algo-tab.active{color:var(--accent);border-bottom-color:var(--accent);}
 
 /* ── STOP PILLS ───────────────────────────────────────────────────────── */
@@ -151,7 +151,7 @@ input[type=range]{width:58px;accent-color:var(--accent);}
 .drag-handle:hover{opacity:1;}
 .drag-handle span{display:block;width:11px;height:1.5px;background:currentColor;border-radius:1px;}
 .stop-pill-icon{font-size:15px;flex-shrink:0;line-height:1;}
-.stop-num{font-size:0.55rem;font-weight:700;color:var(--muted);width:12px;flex-shrink:0;font-family:'DM Mono',monospace;}
+.stop-num{font-size:0.55rem;font-weight:700;color:var(--muted);width:12px;flex-shrink:0;font-family:'JetBrains Mono',monospace;}
 .stop-name{font-size:0.68rem;font-weight:600;color:var(--text);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 .stop-type{font-size:0.54rem;font-weight:700;padding:1px 5px;border-radius:8px;flex-shrink:0;}
 .stop-type.origin{background:rgba(79,120,241,0.15);color:var(--accent);}
@@ -175,12 +175,12 @@ input[type=range]{width:58px;accent-color:var(--accent);}
 .stat-box:first-child{border-radius:8px 0 0 8px;}
 .stat-box:last-child{border-radius:0 8px 8px 0;}
 .stat-box+.stat-box{border-left:none;}
-.stat-val{font-size:0.92rem;font-weight:700;color:var(--green);font-family:'DM Mono',monospace;line-height:1.1;}
+.stat-val{font-size:0.92rem;font-weight:700;color:var(--green);font-family:'JetBrains Mono',monospace;line-height:1.1;}
 .stat-unit{font-size:0.56rem;color:var(--muted);margin-top:2px;font-weight:500;}
 
 /* ── MATRIX ───────────────────────────────────────────────────────────── */
 #mat-scroll{overflow:auto;max-height:130px;}
-table.mat{border-collapse:collapse;font-size:0.55rem;font-family:'DM Mono',monospace;}
+table.mat{border-collapse:collapse;font-size:0.55rem;font-family:'JetBrains Mono',monospace;}
 table.mat th,table.mat td{width:22px;height:20px;text-align:center;border:1px solid var(--border2);padding:0;}
 table.mat th{color:var(--accent);background:var(--surface2);position:sticky;top:0;z-index:1;font-weight:500;}
 table.mat td.z{color:var(--muted);}
@@ -189,7 +189,7 @@ table.mat .rh{color:var(--accent);background:var(--surface2);font-weight:500;}
 
 /* ── LOG ──────────────────────────────────────────────────────────────── */
 .log-wrap{flex:1;overflow:hidden;display:flex;flex-direction:column;min-height:0;}
-#log,#log-mobile{font-size:0.62rem;line-height:1.75;overflow-y:auto;flex:1;padding:6px 12px;font-family:'DM Mono',monospace;}
+#log,#log-mobile{font-size:0.62rem;line-height:1.75;overflow-y:auto;flex:1;padding:6px 12px;font-family:'JetBrains Mono',monospace;}
 .li{padding:1px 0;border-bottom:1px solid rgba(29,42,61,0.6);}
 .li.info{color:var(--accent);}
 .li.step{color:var(--text2);}
@@ -221,12 +221,40 @@ table.mat .rh{color:var(--accent);background:var(--surface2);font-weight:500;}
   .speed-wrap{display:none;}
   .mobile-algo-bar{display:flex;}
   .topbar{padding:0 10px;gap:6px;min-height:46px;}
-  #main-run-btn{flex:1;}
+  #main-run-btn{flex:1;min-width:0;padding:5px 8px;}
+  select{font-size:0.64rem;padding:4px 5px;}
   .drawer{max-height:80vh;transform:translateY(calc(100% - 44px));}
+  
+  /* Additional mobile refinement */
+  .topbar-controls{
+    display:grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap:5px;
+    align-items:center;
+  }
+  .topbar-controls .lbl{display:none;}
+  select{width:100%;max-width:none;}
 }
 
-/* Sidebar overlay (mobile) */
-.sidebar-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:150;backdrop-filter:blur(2px);}
+  /* Sidebar overlay (mobile) */
+  .sidebar-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:150;backdrop-filter:blur(2px);}
+
+  /* ── ZOOM CONTROLS ───────────────────────────────────────────────────── */
+  .zoom-controls{
+    position:absolute;bottom:20px;right:20px;display:flex;flex-direction:column;gap:5px;z-index:20;
+  }
+  .zoom-btn{
+    width:32px;height:32px;background:var(--surface2);border:1px solid var(--border);
+    color:var(--text2);border-radius:8px;display:flex;align-items:center;justify-content:center;
+    cursor:pointer;font-size:16px;font-weight:700;transition:all 0.1s;box-shadow:0 4px 12px rgba(0,0,0,0.3);
+  }
+  .zoom-btn:hover{background:var(--surface);color:var(--text);border-color:var(--accent);}
+  .zoom-btn:active{transform:scale(0.95);}
+
+  @media(max-width:600px){
+    .zoom-controls{bottom:15px;right:15px;}
+    .zoom-btn{width:36px;height:36px;font-size:18px;}
+  }
 </style>
 </head>
 <body>
@@ -304,7 +332,15 @@ table.mat .rh{color:var(--accent);background:var(--surface2);font-weight:500;}
     <div class="content-row">
 
       <!-- CANVAS -->
-      <div id="canvas-wrap"><canvas id="canvas"></canvas><div id="tooltip"></div></div>
+      <div id="canvas-wrap">
+        <canvas id="canvas"></canvas>
+        <div id="tooltip"></div>
+        <div class="zoom-controls">
+          <button class="zoom-btn" onclick="zoomIn()" title="Zoom In">＋</button>
+          <button class="zoom-btn" onclick="zoomOut()" title="Zoom Out">－</button>
+          <button class="zoom-btn" onclick="resetZoom()" title="Reset View" style="font-size:12px">↺</button>
+        </div>
+      </div>
 
       <!-- RIGHT PANEL (desktop/tablet hidden) -->
       <div class="right-panel">
@@ -382,7 +418,7 @@ table.mat .rh{color:var(--accent);background:var(--surface2);font-weight:500;}
     </div>
     <!-- Log tab -->
     <div id="drawer-tab-log" style="display:none;height:200px;display:none;flex-direction:column">
-      <div id="log-mobile" style="font-size:0.62rem;line-height:1.75;overflow-y:auto;flex:1;font-family:'DM Mono',monospace;"></div>
+      <div id="log-mobile" style="font-size:0.62rem;line-height:1.75;overflow-y:auto;flex:1;font-family:'JetBrains Mono',monospace;"></div>
     </div>
   </div>
 </div>
@@ -427,6 +463,11 @@ let viaStops=[], currentMode='dijkstra';
 let hlEdges=[], hlNodes={}, pathEdgeSet=new Set(), animTimer=null;
 let drawerOpen=false, activeDrawerTab='planner';
 let dragSrcViaIdx=null;
+
+// ── ZOOM & PAN STATE ──────────────────────────────────────────────────────────
+let zoomScale=1, viewPanX=0, viewPanY=0;
+let isPanning=false, lastPanX=0, lastPanY=0;
+let initialPinchDist=0, initialZoom=1;
 
 // ── SIDEBAR / DRAWER TOGGLES ──────────────────────────────────────────────────
 function toggleSidebar(){
@@ -481,7 +522,23 @@ window.addEventListener('resize',()=>{
   resizeCanvas();
 });
 
-function tx(x){return x*scale+offX;} function ty(y){return y*scale+offY;} function ts(s){return s*scale;}
+function tx(x){return (x*scale+offX+viewPanX)*zoomScale+(canvas.width/2)*(1-zoomScale);}
+function ty(y){return (y*scale+offY+viewPanY)*zoomScale+(canvas.height/2)*(1-zoomScale);}
+function ts(s){return s*scale*zoomScale;}
+
+function zoomIn(){ updateZoom(zoomScale * 1.25); }
+function zoomOut(){ updateZoom(zoomScale / 1.25); }
+function resetZoom(){ zoomScale=1; viewPanX=0; viewPanY=0; draw(); }
+
+function updateZoom(newP, delta){
+  const prevScale = zoomScale;
+  if(delta !== undefined){
+    zoomScale = Math.max(0.4, Math.min(zoomScale * (delta > 0 ? 0.9 : 1.11), 5));
+  } else {
+    zoomScale = Math.max(0.4, Math.min(newP, 5));
+  }
+  draw();
+}
 
 // ── DRAW ──────────────────────────────────────────────────────────────────────
 function draw(){ctx.clearRect(0,0,canvas.width,canvas.height);drawBG();drawEdges();drawNodes();}
@@ -501,7 +558,7 @@ function drawBG(){
 
   BLDG.forEach(b=>drawBldgCard(b));
 
-  ctx.save(); ctx.font=`${ts(7)}px DM Mono`; ctx.textAlign='center'; ctx.textBaseline='top';
+  ctx.save(); ctx.font=`${ts(7)}px 'JetBrains Mono'`; ctx.textAlign='center'; ctx.textBaseline='top';
   ctx.fillStyle='rgba(79,120,241,0.38)';
   ctx.fillText('Print Shop',tx(181),ty(432));
   ctx.fillText('Stationary',tx(437),ty(432));
@@ -867,9 +924,10 @@ function runPrimAlgo(){
 // ── TOUCH TOOLTIP ─────────────────────────────────────────────────────────────
 function handleCanvasInteraction(clientX,clientY){
   const rect=canvas.getBoundingClientRect();
-  const mapX=(clientX-rect.left-offX)/scale,mapY=(clientY-rect.top-offY)/scale;
+  const mapX=(clientX-rect.left-offX*zoomScale-viewPanX*zoomScale-(canvas.width/2)*(1-zoomScale))/(scale*zoomScale);
+  const mapY=(clientY-rect.top-offY*zoomScale-viewPanY*zoomScale-(canvas.height/2)*(1-zoomScale))/(scale*zoomScale);
   const tip=document.getElementById('tooltip');
-  const n=NODES.find(n=>Math.hypot(n.x-mapX,n.y-mapY)<20);
+  const n=NODES.find(n=>Math.hypot(n.x-mapX,n.y-mapY)<20/zoomScale);
   if(n){
     const conn=EDGES.filter(([a,b])=>a===n.id||b===n.id).sort((p,q)=>p[2]-q[2]).slice(0,3).map(([a,b,w])=>`${NODES[a===n.id?b:a].short}:${w}m`).join(' · ');
     tip.style.display='block';
@@ -880,13 +938,69 @@ function handleCanvasInteraction(clientX,clientY){
   }
   tip.style.display='none';return false;
 }
-canvas.addEventListener('mousemove',e=>handleCanvasInteraction(e.clientX,e.clientY));
-canvas.addEventListener('mouseleave',()=>document.getElementById('tooltip').style.display='none');
-canvas.addEventListener('touchstart',e=>{
-  const t=e.touches[0];
-  if(handleCanvasInteraction(t.clientX,t.clientY))e.preventDefault();
-},{passive:false});
-canvas.addEventListener('touchend',()=>setTimeout(()=>document.getElementById('tooltip').style.display='none',1200));
+
+// ── MOUSE/WHEEL EVENTS ────────────────────────────────────────────────────────
+canvas.addEventListener('wheel', e => {
+  e.preventDefault();
+  updateZoom(null, e.deltaY);
+}, {passive:false});
+
+canvas.addEventListener('mousedown', e => {
+  isPanning=true;
+  lastPanX=e.clientX;
+  lastPanY=e.clientY;
+});
+
+window.addEventListener('mousemove', e => {
+  if(!isPanning) {
+    handleCanvasInteraction(e.clientX, e.clientY);
+    return;
+  }
+  const dx = (e.clientX - lastPanX) / zoomScale;
+  const dy = (e.clientY - lastPanY) / zoomScale;
+  viewPanX += dx;
+  viewPanY += dy;
+  lastPanX = e.clientX;
+  lastPanY = e.clientY;
+  draw();
+});
+
+window.addEventListener('mouseup', () => { isPanning=false; });
+
+// ── TOUCH EVENTS ──────────────────────────────────────────────────────────────
+function getTouchDist(t1,t2){ return Math.hypot(t1.clientX-t2.clientX, t1.clientY-t2.clientY); }
+
+canvas.addEventListener('touchstart', e => {
+  if(e.touches.length === 2) {
+    initialPinchDist = getTouchDist(e.touches[0], e.touches[1]);
+    initialZoom = zoomScale;
+  } else if (e.touches.length === 1) {
+    lastPanX = e.touches[0].clientX;
+    lastPanY = e.touches[0].clientY;
+    handleCanvasInteraction(e.touches[0].clientX, e.touches[0].clientY);
+  }
+}, {passive:false});
+
+canvas.addEventListener('touchmove', e => {
+  if(e.touches.length === 2) {
+    e.preventDefault();
+    const dist = getTouchDist(e.touches[0], e.touches[1]);
+    updateZoom(initialZoom * (dist / initialPinchDist));
+  } else if (e.touches.length === 1) {
+    const dx = (e.touches[0].clientX - lastPanX) / zoomScale;
+    const dy = (e.touches[0].clientY - lastPanY) / zoomScale;
+    viewPanX += dx;
+    viewPanY += dy;
+    lastPanX = e.touches[0].clientX;
+    lastPanY = e.touches[0].clientY;
+    draw();
+    handleCanvasInteraction(e.touches[0].clientX, e.touches[0].clientY);
+  }
+}, {passive:false});
+
+canvas.addEventListener('touchend', () => {
+  setTimeout(()=>document.getElementById('tooltip').style.display='none', 1200);
+});
 
 // ── DRAWER SWIPE ──────────────────────────────────────────────────────────────
 let touchStartY=0;
