@@ -512,9 +512,14 @@ const BASE_W=622,BASE_H=780;
 let scale=1,offX=0,offY=0;
 
 function resizeCanvas(){
-  canvas.width=wrap.clientWidth; canvas.height=wrap.clientHeight;
-  scale=Math.min(canvas.width/BASE_W, canvas.height/BASE_H, 1.2);
-  offX=(canvas.width-BASE_W*scale)/2; offY=(canvas.height-BASE_H*scale)/2;
+  const dpr=window.devicePixelRatio||1;
+  const w=wrap.clientWidth, h=wrap.clientHeight;
+  canvas.width=w*dpr; canvas.height=h*dpr;
+  canvas.style.width=w+'px'; canvas.style.height=h+'px';
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+  scale=Math.min(w/BASE_W, h/BASE_H, 1.2);
+  offX=(w-BASE_W*scale)/2; offY=(h-BASE_H*scale)/2;
   draw();
 }
 window.addEventListener('resize',()=>{
@@ -522,8 +527,8 @@ window.addEventListener('resize',()=>{
   resizeCanvas();
 });
 
-function tx(x){return (x*scale+offX+viewPanX)*zoomScale+(canvas.width/2)*(1-zoomScale);}
-function ty(y){return (y*scale+offY+viewPanY)*zoomScale+(canvas.height/2)*(1-zoomScale);}
+function tx(x){return (x*scale+offX+viewPanX)*zoomScale+(wrap.clientWidth/2)*(1-zoomScale);}
+function ty(y){return (y*scale+offY+viewPanY)*zoomScale+(wrap.clientHeight/2)*(1-zoomScale);}
 function ts(s){return s*scale*zoomScale;}
 
 function zoomIn(){ updateZoom(zoomScale * 1.25); }
@@ -924,8 +929,8 @@ function runPrimAlgo(){
 // ── TOUCH TOOLTIP ─────────────────────────────────────────────────────────────
 function handleCanvasInteraction(clientX,clientY){
   const rect=canvas.getBoundingClientRect();
-  const mapX=(clientX-rect.left-offX*zoomScale-viewPanX*zoomScale-(canvas.width/2)*(1-zoomScale))/(scale*zoomScale);
-  const mapY=(clientY-rect.top-offY*zoomScale-viewPanY*zoomScale-(canvas.height/2)*(1-zoomScale))/(scale*zoomScale);
+  const mapX=(clientX-rect.left-offX*zoomScale-viewPanX*zoomScale-(wrap.clientWidth/2)*(1-zoomScale))/(scale*zoomScale);
+  const mapY=(clientY-rect.top-offY*zoomScale-viewPanY*zoomScale-(wrap.clientHeight/2)*(1-zoomScale))/(scale*zoomScale);
   const tip=document.getElementById('tooltip');
   const n=NODES.find(n=>Math.hypot(n.x-mapX,n.y-mapY)<20/zoomScale);
   if(n){
